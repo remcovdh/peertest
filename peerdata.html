@@ -6,6 +6,7 @@
 		<script src="peerjs.min.js"></script>
 		<script>
 			var peer;
+			var conn;
 			function init() {
 				console.log('Start init()');
 				peer = new Peer();
@@ -26,9 +27,13 @@
 			}
 
 			function start(destpeerid) {
-				var conn = peer.connect('dest-peer-id');
+				conn = peer.connect(destpeerid);
+				console.log('Connection object' + conn)
 			}
 
+			function send(text) {
+				conn.send('Hello!');
+			}
 		</script>
 	</head>
 	<body>
@@ -39,5 +44,8 @@
 		<label for="peerid">Peer id:</label><br>
 		<input type="text" id="peerid" name="peerid"><br>
 		<button onclick="start(document.getElementById('peerid'))">Click to connect</button><br>
+		<br>
+		<button onclick="send('Hello REM')">Click to connect</button><br>
+
 	</body>
 </html>

@@ -9,7 +9,12 @@
 			var conn;
 			function init() {
 				console.log('Start init()');
-				peer = new Peer();
+				# peer = new Peer();
+				peer = new Peer('Testid'+Math.ceil(Math.random()*1000), {
+			      host: 'localhost',
+			      port: 8999,
+			      path: '/remapp'
+    			});
 				// var peer = new Peer({key: 'lwjd5qra8257b9'});
 
 				peer.on('open', function(id) {

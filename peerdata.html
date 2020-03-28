@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="peer.min.js"></script>
+		<script>
+			var peer;
+			function init() {
+				peer = new Peer();
+				// var peer = new Peer({key: 'lwjd5qra8257b9'});
+
+				peer.on('open', function(id) {
+  					console.log('My peer ID is: ' + id);
+				});
+
+				peer.on('connection', function(conn) { 
+					console.log('Recieved connection: ' + conn);
+				});
+
+				peer.on('data', function(data) { 
+					console.log('Recieved data: ' + data);
+				});
+
+			}
+
+			function start(dest-peer-id) {
+				var conn = peer.connect('dest-peer-id');
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Simpel peer to peer tests</h1>
+		<div id='messages'>
+
+		</div>
+
+	</body>
+</html>

@@ -32,9 +32,11 @@
 	</head>
 	<body>
 		<h1>Simpel peer to peer tests</h1>
-		<div id='messages'>
+		<button onclick="init()">Click to init</button><br>
+		<div id='messages'></div>
 
-		</div>
-
+		<label for="peerid">Peer id:</label>><br>
+		<input type="text" id="peerid" name="peerid">><br>
+		<button onclick="start(document.getElementById("peerid"))">Click to connect</button><br>
 	</body>
 </html>

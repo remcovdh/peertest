@@ -26,6 +26,10 @@
 					console.log('Recieved connection: ' + conn);
 				});
 
+				peer.on('error', function(err) { 
+					console.log('Error: ' + err);
+				});
+
 			}
 
 			function start(destpeerid) {

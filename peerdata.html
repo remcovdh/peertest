@@ -26,7 +26,7 @@
 					console.log('Recieved connection: ' + conn);
 				});
 
-				peer.on('data', function(data) { 
+				conn.on('data', function(data) { 
 					console.log('Recieved data: ' + data);
 				});
 
@@ -54,7 +54,7 @@
 		<input type="text" id="peerid" name="peerid"><br>
 		<button onclick="start(document.getElementById('peerid'))">Click to connect</button><br>
 		<br>
-		<button onclick="send('Hello REM')">Click to connect</button><br>
+		<button onclick="send('Hello REM')">Send data</button><br>
 
 	</body>
 </html>

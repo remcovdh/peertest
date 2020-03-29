@@ -26,18 +26,19 @@
 					console.log('Recieved connection: ' + conn);
 				});
 
+			}
+
+			function start(destpeerid) {
+				conn = peer.connect(destpeerid);
+				console.log('Connection object' + conn)
 				conn.on('data', function(data) { 
 					console.log('Recieved data: ' + data);
 				});
 
 			}
 
-			function start(destpeerid) {
-				conn = peer.connect(destpeerid);
-				console.log('Connection object' + conn)
-			}
-
 			function send(text) {
+				// Should test on connection object
 				console.log('Sending');
 				conn.send('Hello!');
 				console.log('Send!?');

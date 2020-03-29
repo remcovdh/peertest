@@ -30,14 +30,15 @@
 					console.log('Recieved connection: ' + conn);
 				});
 
-				function send(text) {
-					conn.send('Hello!');
-				}
 			}
 
 			function start(destpeerid) {
 				conn = peer.connect(destpeerid);
 				console.log('Connection object' + conn)
+			}
+
+			function send(text) {
+				conn.send('Hello!');
 			}
 
 		</script>

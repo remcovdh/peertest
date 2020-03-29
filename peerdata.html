@@ -19,16 +19,20 @@
 
 				peer.on('open', function(id) {
   					console.log('My peer ID is: ' + id);
+
+  					peer.on('data', function(data) { 
+						console.log('Recieved data: ' + data);
+					});
+
 				});
 
 				peer.on('connection', function(conn) { 
 					console.log('Recieved connection: ' + conn);
 				});
 
-				peer.on('data', function(data) { 
-					console.log('Recieved data: ' + data);
-				});
-
+				function send(text) {
+					conn.send('Hello!');
+				}
 			}
 
 			function start(destpeerid) {
@@ -36,9 +40,6 @@
 				console.log('Connection object' + conn)
 			}
 
-			function send(text) {
-				conn.send('Hello!');
-			}
 		</script>
 	</head>
 	<body>

@@ -20,14 +20,14 @@
 				peer.on('open', function(id) {
   					console.log('My peer ID is: ' + id);
 
-  					peer.on('data', function(data) { 
-						console.log('Recieved data: ' + data);
-					});
-
 				});
 
 				peer.on('connection', function(conn) { 
 					console.log('Recieved connection: ' + conn);
+				});
+
+				peer.on('data', function(data) { 
+					console.log('Recieved data: ' + data);
 				});
 
 			}
@@ -38,7 +38,9 @@
 			}
 
 			function send(text) {
+				console.log('Sending');
 				conn.send('Hello!');
+				console.log('Send!?');
 			}
 
 		</script>
